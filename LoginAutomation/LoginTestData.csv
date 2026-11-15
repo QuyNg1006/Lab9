@@ -1,0 +1,7 @@
+Username,Password,Expected
+user1,password1,Login successful
+user2,password2,Login successful
+user3,password3,Login successful
+user1,wrongpass,Invalid credentials
+admin,123456,Invalid credentials
+,,Invalid credentials

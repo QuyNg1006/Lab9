@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        // Demo rule: valid accounts are user1/password1, user2/password2, user3/password3
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var u = document.getElementById('username').value;
+            var p = document.getElementById('password').value;
+            var ok = /^user[1-3]$/.test(u) && p === 'password' + u.slice(-1);
+            document.getElementById('message').textContent = ok ? 'Login successful' : 'Invalid credentials';
+        });
+    </script>
+</body>
+</html>
